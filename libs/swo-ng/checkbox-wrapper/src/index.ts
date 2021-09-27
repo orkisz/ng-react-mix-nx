@@ -1,1 +1,2 @@
-export * from './lib/swo-ng-checkbox-wrapper.module';
+export * from './lib/checkbox-wrapper.module';
+export * from './lib/pyra-checkbox-wrapper.component';

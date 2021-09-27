@@ -1,0 +1,14 @@
+<label>
+  <ng-content select="input[type=radio]"
+              *ngIf="radio"></ng-content>
+  <ng-content select="input[type=checkbox]"
+              *ngIf="!radio"></ng-content>
+  <div class="fake"
+       [class.rounded]="radio"
+       [class.indeterminate]="indeterminate"
+       aria-hidden="true">
+  </div>
+  <span>
+    <ng-content></ng-content>
+  </span>
+</label>
