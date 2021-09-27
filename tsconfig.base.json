@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@swo-ng/checkbox-wrapper": ["libs/swo-ng/checkbox-wrapper/src/index.ts"],
+      "@swo-ng/progress-bar": ["libs/swo-ng/progress-bar/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,7 +1,102 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "swo-ng-checkbox-wrapper": {
+      "projectType": "library",
+      "root": "libs/swo-ng/checkbox-wrapper",
+      "sourceRoot": "libs/swo-ng/checkbox-wrapper/src",
+      "prefix": "ng-react-mix-nx",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "outputs": ["dist/libs/swo-ng/checkbox-wrapper"],
+          "options": {
+            "project": "libs/swo-ng/checkbox-wrapper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/swo-ng/checkbox-wrapper/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/swo-ng/checkbox-wrapper/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/swo-ng/checkbox-wrapper"],
+          "options": {
+            "jestConfig": "libs/swo-ng/checkbox-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/swo-ng/checkbox-wrapper/src/**/*.ts",
+              "libs/swo-ng/checkbox-wrapper/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "swo-ng-progress-bar": {
+      "projectType": "library",
+      "root": "libs/swo-ng/progress-bar",
+      "sourceRoot": "libs/swo-ng/progress-bar/src",
+      "prefix": "ng-react-mix-nx",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "outputs": ["dist/libs/swo-ng/progress-bar"],
+          "options": {
+            "project": "libs/swo-ng/progress-bar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/swo-ng/progress-bar/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/swo-ng/progress-bar/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/swo-ng/progress-bar"],
+          "options": {
+            "jestConfig": "libs/swo-ng/progress-bar/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/swo-ng/progress-bar/src/**/*.ts",
+              "libs/swo-ng/progress-bar/src/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {}
+  },
+  "defaultProject": "swo-ng-progress-bar"
 }
