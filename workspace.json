@@ -39,6 +39,66 @@
               "libs/swo-ng/checkbox-wrapper/src/**/*.html"
             ]
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/swo-ng/checkbox-wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/swo-ng-checkbox-wrapper",
+            "config": {
+              "configFolder": "libs/swo-ng/checkbox-wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "swo-ng-checkbox-wrapper-e2e": {
+      "root": "apps/swo-ng-checkbox-wrapper-e2e",
+      "sourceRoot": "apps/swo-ng-checkbox-wrapper-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/swo-ng-checkbox-wrapper-e2e/cypress.json",
+            "devServerTarget": "swo-ng-checkbox-wrapper:storybook",
+            "tsConfig": "apps/swo-ng-checkbox-wrapper-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "swo-ng-checkbox-wrapper:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/swo-ng-checkbox-wrapper-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     },
@@ -79,6 +139,64 @@
               "libs/swo-ng/progress-bar/src/**/*.ts",
               "libs/swo-ng/progress-bar/src/**/*.html"
             ]
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/swo-ng/progress-bar/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/swo-ng-progress-bar",
+            "config": {
+              "configFolder": "libs/swo-ng/progress-bar/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "swo-ng-progress-bar-e2e": {
+      "root": "apps/swo-ng-progress-bar-e2e",
+      "sourceRoot": "apps/swo-ng-progress-bar-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/swo-ng-progress-bar-e2e/cypress.json",
+            "devServerTarget": "swo-ng-progress-bar:storybook",
+            "tsConfig": "apps/swo-ng-progress-bar-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "swo-ng-progress-bar:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/swo-ng-progress-bar-e2e/**/*.{js,ts}"]
           }
         }
       }

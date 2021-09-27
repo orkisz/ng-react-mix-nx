@@ -14,7 +14,13 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
       }
     }
   },
@@ -30,8 +36,16 @@
     "swo-ng-checkbox-wrapper": {
       "tags": []
     },
+    "swo-ng-checkbox-wrapper-e2e": {
+      "tags": [],
+      "implicitDependencies": ["swo-ng-checkbox-wrapper"]
+    },
     "swo-ng-progress-bar": {
       "tags": []
+    },
+    "swo-ng-progress-bar-e2e": {
+      "tags": [],
+      "implicitDependencies": ["swo-ng-progress-bar"]
     },
     "swo-react-checkbox-wrapper": {
       "tags": []

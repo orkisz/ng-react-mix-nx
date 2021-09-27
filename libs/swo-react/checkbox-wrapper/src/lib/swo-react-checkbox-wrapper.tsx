@@ -1,13 +1,23 @@
 import './swo-react-checkbox-wrapper.module.scss';
+import React from 'react';
 
 /* eslint-disable-next-line */
-export interface SwoReactCheckboxWrapperProps {}
+export interface SwoReactCheckboxWrapperProps {
+  radio?: boolean;
+  indeterminate?: boolean;
+  children: React.ReactNode;
+}
 
 export function SwoReactCheckboxWrapper(props: SwoReactCheckboxWrapperProps) {
+  const childrenArray = React.Children.toArray(props.children);
+  let input;
+  if (props.radio) {
+    input = childrenArray.find(n => n)
+  }
   return (
-    <div>
-      <h1>Welcome to SwoReactCheckboxWrapper!</h1>
-    </div>
+    <label>
+
+    </label>
   );
 }
 
