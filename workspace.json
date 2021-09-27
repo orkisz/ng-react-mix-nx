@@ -82,6 +82,49 @@
           }
         }
       }
+    },
+    "swo-react-checkbox-wrapper": {
+      "root": "libs/swo-react/checkbox-wrapper",
+      "sourceRoot": "libs/swo-react/checkbox-wrapper/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/swo-react/checkbox-wrapper",
+            "tsConfig": "libs/swo-react/checkbox-wrapper/tsconfig.lib.json",
+            "project": "libs/swo-react/checkbox-wrapper/package.json",
+            "entryFile": "libs/swo-react/checkbox-wrapper/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/swo-react/checkbox-wrapper/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "libs/swo-react/checkbox-wrapper/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/swo-react/checkbox-wrapper"],
+          "options": {
+            "jestConfig": "libs/swo-react/checkbox-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -96,7 +139,12 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {}
+    "@nrwl/angular:component": {},
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
   },
   "defaultProject": "swo-ng-progress-bar"
 }

@@ -16,7 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@swo-ng/checkbox-wrapper": ["libs/swo-ng/checkbox-wrapper/src/index.ts"],
-      "@swo-ng/progress-bar": ["libs/swo-ng/progress-bar/src/index.ts"]
+      "@swo-ng/progress-bar": ["libs/swo-ng/progress-bar/src/index.ts"],
+      "@swo-react/checkbox-wrapper": [
+        "libs/swo-react/checkbox-wrapper/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

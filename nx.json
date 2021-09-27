@@ -32,6 +32,9 @@
     },
     "swo-ng-progress-bar": {
       "tags": []
+    },
+    "swo-react-checkbox-wrapper": {
+      "tags": []
     }
   }
 }
