@@ -1,1 +1,2 @@
-export * from './lib/swo-ng-progress-bar.module';
+export * from './lib/progress-bar.module';
+export * from './lib/progress-bar.component';

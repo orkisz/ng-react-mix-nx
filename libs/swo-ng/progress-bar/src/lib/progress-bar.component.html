@@ -1,0 +1,19 @@
+<p class="progress__label">{{ label }}</p>
+
+<div
+  class="progress"
+  [class]="severityClass"
+  [attr.data-progress]="progress$ | async"
+  aria-hidden="true"
+>
+  <div
+    class="progress-bar"
+    role="progressbar"
+    [style.width.%]="progress$ | async"
+  >
+    <span
+      class="sr-only"
+
+    >{{progress$ | async}}% Complete</span>
+  </div>
+</div>

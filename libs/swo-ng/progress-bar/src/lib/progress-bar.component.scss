@@ -1,0 +1,45 @@
+@import "~@swo/pyra-ui/dist/styles/variables";
+
+.progress {
+  background: $gray-light;
+  height: 15px;
+  margin: 0;
+  border-radius: $pyra-border-radius-base;
+  &__label {
+    color: $gray-dark;
+    font-size: 1.2rem;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .progress-bar {
+    width: 0;
+    -webkit-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+    height: 15px;
+    background: $alerts-success;
+  }
+  &--high,
+  &--critical {
+    &.show-lighten-bg {
+      &[data-progress="0"] {
+        background: lighten($alerts-danger, 30);
+      }
+    }
+    .progress-bar {
+      background: $alerts-danger;
+    }
+  }
+  &--low,
+  &--medium {
+    &.show-lighten-bg {
+      &[data-progress="0"] {
+        background: lighten($alerts-warning, 30);
+      }
+    }
+    .progress-bar {
+      background: $alerts-warning;
+    }
+  }
+}
