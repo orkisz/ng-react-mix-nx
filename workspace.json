@@ -241,6 +241,66 @@
             "jestConfig": "libs/swo-react/checkbox-wrapper/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/swo-react/checkbox-wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/swo-react-checkbox-wrapper",
+            "config": {
+              "configFolder": "libs/swo-react/checkbox-wrapper/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "swo-react-checkbox-wrapper-e2e": {
+      "root": "apps/swo-react-checkbox-wrapper-e2e",
+      "sourceRoot": "apps/swo-react-checkbox-wrapper-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/swo-react-checkbox-wrapper-e2e/cypress.json",
+            "devServerTarget": "swo-react-checkbox-wrapper:storybook",
+            "tsConfig": "apps/swo-react-checkbox-wrapper-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "swo-react-checkbox-wrapper:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/swo-react-checkbox-wrapper-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     }
