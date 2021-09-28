@@ -45,7 +45,7 @@
           "executor": "@nrwl/storybook:storybook",
           "options": {
             "uiFramework": "@storybook/angular",
-            "port": 4400,
+            "port": 4401,
             "config": {
               "configFolder": "libs/swo-ng/checkbox-wrapper/.storybook"
             },
@@ -148,10 +148,11 @@
           "executor": "@nrwl/storybook:storybook",
           "options": {
             "uiFramework": "@storybook/angular",
-            "port": 4400,
+            "port": 4402,
             "config": {
               "configFolder": "libs/swo-ng/progress-bar/.storybook"
-            }
+            },
+            "angularBrowserTarget": "swo-ng-progress-bar:build"
           },
           "configurations": {
             "ci": {
