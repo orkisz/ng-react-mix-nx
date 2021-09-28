@@ -11,7 +11,8 @@
           "executor": "@nrwl/angular:package",
           "outputs": ["dist/libs/swo-ng/checkbox-wrapper"],
           "options": {
-            "project": "libs/swo-ng/checkbox-wrapper/ng-package.json"
+            "project": "libs/swo-ng/checkbox-wrapper/ng-package.json",
+            "tsConfig": "libs/swo-ng/checkbox-wrapper/tsconfig.lib.prod.json"
           },
           "configurations": {
             "production": {
@@ -47,7 +48,8 @@
             "port": 4400,
             "config": {
               "configFolder": "libs/swo-ng/checkbox-wrapper/.storybook"
-            }
+            },
+            "angularBrowserTarget": "swo-ng-checkbox-wrapper:build"
           },
           "configurations": {
             "ci": {
@@ -112,7 +114,8 @@
           "executor": "@nrwl/angular:package",
           "outputs": ["dist/libs/swo-ng/progress-bar"],
           "options": {
-            "project": "libs/swo-ng/progress-bar/ng-package.json"
+            "project": "libs/swo-ng/progress-bar/ng-package.json",
+            "tsConfig": "libs/swo-ng/progress-bar/tsconfig.lib.json"
           },
           "configurations": {
             "production": {
