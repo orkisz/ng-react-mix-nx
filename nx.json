@@ -47,6 +47,13 @@
       "tags": [],
       "implicitDependencies": ["swo-ng-progress-bar"]
     },
+    "swo-ng-sb": {
+      "tags": []
+    },
+    "swo-ng-sb-e2e": {
+      "tags": [],
+      "implicitDependencies": ["swo-ng-sb"]
+    },
     "swo-react-checkbox-wrapper": {
       "tags": []
     },

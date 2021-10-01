@@ -205,6 +205,106 @@
         }
       }
     },
+    "swo-ng-sb": {
+      "projectType": "library",
+      "root": "libs/swo-ng/sb",
+      "sourceRoot": "libs/swo-ng/sb/src",
+      "prefix": "ng-react-mix-nx",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/swo-ng/sb"],
+          "options": {
+            "project": "libs/swo-ng/sb/ng-package.json",
+            "tsConfig": "libs/swo-ng/sb/tsconfig.lib.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/swo-ng/sb/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/swo-ng/sb/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/swo-ng/sb"],
+          "options": {
+            "jestConfig": "libs/swo-ng/sb/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/swo-ng/sb/src/**/*.ts",
+              "libs/swo-ng/sb/src/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/swo-ng/sb/.storybook"
+            },
+            "angularBrowserTarget": "swo-ng-sb:build"
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/swo-ng-sb",
+            "config": {
+              "configFolder": "libs/swo-ng/sb/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "swo-ng-sb-e2e": {
+      "root": "apps/swo-ng-sb-e2e",
+      "sourceRoot": "apps/swo-ng-sb-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/swo-ng-sb-e2e/cypress.json",
+            "devServerTarget": "swo-ng-sb:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "swo-ng-sb:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/swo-ng-sb-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "swo-react-checkbox-wrapper": {
       "root": "libs/swo-react/checkbox-wrapper",
       "sourceRoot": "libs/swo-react/checkbox-wrapper/src",
