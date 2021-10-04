@@ -40,6 +40,10 @@
       "tags": [],
       "implicitDependencies": ["swo-ng-checkbox-wrapper"]
     },
+    "swo-ng-checkbox-wrapper-e2e-pw": {
+      "tags": [],
+      "implicitDependencies": ["swo-ng-checkbox-wrapper"]
+    },
     "swo-ng-progress-bar": {
       "tags": []
     },

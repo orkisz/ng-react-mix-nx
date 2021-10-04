@@ -104,6 +104,36 @@
         }
       }
     },
+    "swo-ng-checkbox-wrapper-e2e-pw": {
+      "root": "apps/swo-ng-checkbox-wrapper-e2e-pw",
+      "sourceRoot": "apps/swo-ng-checkbox-wrapper-e2e-pw/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@ns3/nx-jest-playwright:jest-playwright",
+          "options": {
+            "devServerTarget": "swo-ng-checkbox-wrapper:storybook",
+            "jestConfig": "apps/swo-ng-checkbox-wrapper-e2e-pw/jest.config.js",
+            "passWithNoTests": true,
+            "baseUrl": "http://localhost:4401"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "swo-ng-checkbox-wrapper:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/swo-ng-checkbox-wrapper-e2e-pw/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        }
+      }
+    },
     "swo-ng-progress-bar": {
       "projectType": "library",
       "root": "libs/swo-ng/progress-bar",
